@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Data Breach Detector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css\styles.css">
+    <script src="https://kit.fontawesome.com/594fec6cdb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="loading-container hide">
+    <div class="lds-hourglass"></div>
+</div>
+<section id="title">
+    <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Data Breach Detector</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team-members">Solution</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Title -->
+        <div class="row">
+            <div class="col-md-12 mb-3 heading-main">
+                <h1>Make sure your credentials haven't been compromised</h1>
+            </div>
+            <div class="col-md-12 form-content">
+                <form id="emailInputForm" novalidate>
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email address</label>
+                        <input type="email" class="form-control email-input" id="emailInput"
+                               aria-describedby="emailHelp" placeholder="e.g. johndoe@example.com">
+                        <small id="emailHelp" class="form-text never-share">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary email-submit-btn" id="emailSubmitBtn">
+                        Check my safety
+                        <img src="./images/icons/check-lock-white.png" alt="check lock" class="icon-md"/>
+                    </button>
+                </form>
+                <div class="tablecustom" id="results">
+                    <table class="table table-dark table-striped tableprops result-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 5%" scope="col">#</th>
+                            <th style="width: 10%" scope="col">Logo</th>
+                            <th style="width: 60%;" scope="col">Source</th>
+                            <th style="width: 25%" class="text-center" scope="col">Date of Breach</th>
+                        </tr>
+                        </thead>
+                        <tbody id="result-table-body"></tbody>
+                    </table>
+                </div>
+                <h4 class="noResults" id="noResults">Hurray! No data breaches found for this email</h4>
+                <p class="emailError" id="emailError">Please try with a valid email address.</p>
+                <p class="emailError" id="frequentRequestError">Please try again in a few seconds.</p>
+                <p class="checkAnother" id="checkForAnotherEmail">Check for another email</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features -->
+
+<section id="features">
+    <div class="row">
+        <div class="feature-box col-lg-4">
+            <i class="icon fa-solid fa-circle-check fa-4x"></i>
+            <h3>Everything at one place</h3>
+            <p>You don't need to search for data all over the Internet, we already have everything.</p>
+        </div>
+        <div class="feature-box col-lg-4">
+            <i class="icon fa-solid fa-bullseye fa-4x"></i>
+            <h3>Easy To Use</h3>
+            <p>Input your email and just press enter to see all the leaks.</p>
+        </div>
+        <div class="feature-box col-lg-4">
+            <i class="icon fa-solid fa-heart fa-4x"></i>
+            <h3>Many Filters</h3>
+            <p>Search by e-mail or service keyword.</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h2>About Data Breach Detector</h2>
+                <div class="testimonial-text mt-3">A data breach is a security violation, in which sensitive, protected
+                    or
+                    confidential data is copied, transmitted, viewed, stolen or used by an individual unauthorized to
+                    do so. Data breaches may involve financial information such as credit card and debit card details,
+                    bank details, personal information like email address and passwords. Incidents range from concerted
+                    attacks by individuals who hack for personal gain or malice.
+                </div>
+
+            </div>
+            <div class="carousel-item" id="solution">
+                <h2>Solution</h2>
+                <div class="testimonial-text mt-3">We are working to create a web portal where users can come and enter
+                    their email id
+                    which is associated with various social accounts on different websites or social platforms. With a
+                    single
+                    click our site will provide a list of names of various services which have undergone data breaches
+                    with
+                    the help of third party APIs. The user can immediately take appropriate action, such as changing
+                    their
+                    passwords and other personal credentials. This will ensure that their account becomes secured again
+                    and
+                    they will be aware of such incidents.
+                </div>
+
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section id="cta">
+    <h3 class="protect">Protect your credentials</h3>
+</section>
+
+<footer id="footer">
+    <p class="text-center copyright">Data Breach Detector - All right reserved @ 2023</p>
+</footer>
+
+<script src="./scripts/util.js" type="module"></script>
+<script src="./scripts/render.js"></script>
+<script src="./scripts/main.js" type="module"></script>
+
+</body>
+
+</html>
